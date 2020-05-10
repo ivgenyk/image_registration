@@ -44,3 +44,9 @@ example:
     ManualReg(im1, im2)
 ```
 detailed example in example.py
+
+#### Requirements
+* python 3
+* openCV
+* numpy
+* scipy for mi_reg and poc_reg only
