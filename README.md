@@ -4,7 +4,7 @@
 The project contains 4 different automatic methods for finding the offset between 2 images.
 ####Implemented methods:
 * Lucas Kanade
-* POC
+* POC 
 * Mutual Information
 * Correlation
 
@@ -50,3 +50,9 @@ detailed example in example.py
 * openCV
 * numpy
 * scipy for mi_reg and poc_reg only
+
+#### References
+- Part of the code was adapted from: https://github.com/alex000kim/ImReg
+- LK ( B. D. Lucas and T. Kanade (1981), An iterative image registration technique with an application to stereo vision. Proceedings of Imaging Understanding Workshop, pages 121--130)
+- POC (Nagashima, Sei, et al. "A subpixel image matching technique using phase-only correlation." Intelligent Signal Processing and Communications, 2006. ISPACS'06. International Symposium on. IEEE, 2006.)
+- Mutual Information. (Zhang, Boyang, et al. "A mutual information based sub-pixel registration method for image super resolution." Intelligent Information Hiding and Multimedia Signal Processing, 2009. IIH-MSP'09. Fifth International Conference on. IEEE, 2009.)
