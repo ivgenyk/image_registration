@@ -25,6 +25,7 @@ detailed example in example.py
 ## ManualReg
 A utility written in openCV for manual registration.
 It allows to overlay the images one on top of the other and shift them in varity of step sizes showing the abs diif.
+![](example_movie.gif)
 ####Help for ManualReg
 * esc: exit
 * arrow keys or 'w'/'d'/'x'/'a' move the image
