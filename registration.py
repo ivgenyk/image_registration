@@ -5,6 +5,7 @@ import numpy as np
 class RegistrationMethod:
     def __init__(self):
         self.gauss_smooth ={'n':7, 'sig':3}
+        self.method_name = 'anonymous'
         pass
 
     def find_shift(self, im1, im2):

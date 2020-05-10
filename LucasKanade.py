@@ -9,6 +9,7 @@ class LucasKanade(RegistrationMethod):
         self.num_iters = 5
         self.dark_noise_factor = 5
         self.debug_mode = False
+        self.method_name = 'LucasKanade'
 
     def find_shift(self, im1, im2):
         """

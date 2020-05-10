@@ -1,8 +1,13 @@
+import time
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+
 from LucasKanade import LucasKanade
 from brute_force import BruteForce
+from poc_reg import PocReg
+from mi_reg import MutualInfReg
+
 add_noise = True
 show_figs = False
 smooth_with_gaus = False
@@ -15,8 +20,7 @@ if smooth_with_gaus:
 
 im2 = im1.copy()
 
-# registrator = LucasKanade()
-registrator = BruteForce()
+registrators = [PocReg(), MutualInfReg(), LucasKanade(), BruteForce()]
 
 for i in range(10):
     random_shift = cv2.randu(np.array((2,1),dtype='float'), -10,10)
@@ -27,7 +31,7 @@ for i in range(10):
     if add_noise:
         noise = np.zeros_like(im1, dtype='int')
         noise = cv2.randn(noise, np.asarray([0,0,0]) ,np.asarray([30,30,30]))
-        im2_shiifted = np.clip(im2_shifted.astype('int') + noise , 0, 255 ).astype('uint8')
+        im2_shiifted = np.clip(im2_shifted.astype('int') + noise.get() , 0, 255 ).astype('uint8')
 
     if show_figs:
         plt.figure(1)
@@ -38,15 +42,18 @@ for i in range(10):
         plt.title('shifted tx: %1.3f ty: %1.3f' % (tx,ty))
         plt.show()
 
-    estx, esty = registrator.find_shift(im1, im2_shifted)
-    estxp, estyp = registrator.find_shift_pyramid(im1, im2_shifted)
+    print('------actual shift is: (%1.3f, %1.3f ------------)' % (-tx, -ty))
+    for registrator in registrators:
+        start = time.time()
+        estx, esty = registrator.find_shift(im1, im2_shifted)
+        # print('calculated shift is: (%1.3f, %1.3f)' % (estx, esty))
+        error = [abs((estx + tx) / tx), abs((esty + ty) / ty)]
+        inf_time = time.time() - start
+        print('error (%1.3f, %1.3f) shift (%1.3f,%1.3f) %f %s ' % (error[0], error[1], estx, esty, inf_time, registrator.method_name))
 
-    print('actual shift is: (%1.3f, %1.3f)' % (-tx, -ty))
-    print('calculated shift is: (%1.3f, %1.3f)' % (estx, esty))
-    print('calculated shift is: (%1.3f, %1.3f)' % (estxp, estyp))
-    error = [abs((estx+tx)/tx) ,abs((esty+ty)/ty)]
-    error_pyr = [abs((estxp+tx)/tx) ,abs((estyp+ty)/ty)]
+        start = time.time()
+        estxp, estyp = registrator.find_shift_pyramid(im1, im2_shifted)
+        error_pyr = [abs((estxp + tx) / tx), abs((estyp + ty) / ty)]
+        inf_time = time.time() - start
+        print('error (%1.3f, %1.3f) shift (%1.3f,%1.3f) Pyramid %f %s ' % (error_pyr[0], error_pyr[1], estxp, estyp, inf_time, registrator.method_name))
 
-    print('error reg',error)
-    print('error reg pyramid', error_pyr)
-temp = 1
