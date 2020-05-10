@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-from LucasKanade import LucasKanade
-from brute_force import BruteForce
+from lucas_kanade_reg import LucasKanade
+from brute_force_reg import BruteForce
 from poc_reg import PocReg
 from mi_reg import MutualInfReg
 
