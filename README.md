@@ -1,5 +1,5 @@
 # image_registration
-###Methods for image full and subpixel registration
+### Methods for image full and subpixel registration
 
 The project contains 4 different automatic methods for finding the offset between 2 images.
 ####Implemented methods:
@@ -22,7 +22,7 @@ example:
 ```
 detailed example in example.py
 
-##ManualReg
+## ManualReg
 A utility written in openCV for manual registration.
 It allows to overlay the images one on top of the other and shift them in varity of step sizes showing the abs diif.
 ####Help for ManualReg
