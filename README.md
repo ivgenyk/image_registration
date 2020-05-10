@@ -1,5 +1,5 @@
 # image_registration
-###Methods for image full and subpixel registration
+### Methods for image full and subpixel registration
 
 The project contains 4 different automatic methods for finding the offset between 2 images.
 ####Implemented methods:
