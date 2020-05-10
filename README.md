@@ -22,7 +22,7 @@ example:
 ```
 detailed example in example.py
 
-##ManualReg
+## ManualReg
 A utility written in openCV for manual registration.
 It allows to overlay the images one on top of the other and shift them in varity of step sizes showing the abs diif.
 ####Help for ManualReg
