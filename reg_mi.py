@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.ndimage.interpolation import shift
 from scipy.optimize import differential_evolution
-from registration import RegistrationMethod
+from reg import RegistrationMethod
 
 
 # Copyright (c) 2019 Alexander Kim

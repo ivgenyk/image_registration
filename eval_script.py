@@ -3,10 +3,10 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-from lucas_kanade_reg import LucasKanade
-from brute_force_reg import BruteForce
-from poc_reg import PocReg
-from mi_reg import MutualInfReg
+from reg_lucas_kanade import LucasKanade
+from reg_brute_force import BruteForce
+from reg_poc import PocReg
+from reg_mi import MutualInfReg
 
 add_noise = True
 show_figs = False

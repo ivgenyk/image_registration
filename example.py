@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from lucas_kanade_reg import LucasKanade
+from reg_lucas_kanade import LucasKanade
 from manual_reg import ManualReg
 
 """

@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from registration import RegistrationMethod
+from reg import RegistrationMethod
 
 
 class BruteForce(RegistrationMethod):

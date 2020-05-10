@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-from registration import RegistrationMethod
+from reg import RegistrationMethod
 
 
 class LucasKanade(RegistrationMethod):

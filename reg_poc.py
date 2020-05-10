@@ -3,7 +3,7 @@ import scipy
 import scipy.fftpack
 from numpy import pi, sin
 from scipy.optimize import leastsq
-from registration import RegistrationMethod
+from reg import RegistrationMethod
 
 """
 "High-AccuracySubpixelImageRegistrationBasedonPhase-OnlyCorrelation"
