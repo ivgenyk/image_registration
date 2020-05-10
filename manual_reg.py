@@ -182,3 +182,8 @@ class ManualReg:
     #             plt.imshow(im)
     #
     #     plt.show()
+
+
+
+
+

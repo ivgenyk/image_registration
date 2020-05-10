@@ -63,3 +63,4 @@ if __name__ == "__main__":
     test_lucas_kanade_pyramid(im1, im2_shifted)
     # manual registration example, press ? to print keys
     ManualReg(im1, im2_shifted)
+

@@ -48,9 +48,8 @@ class LucasKanade(RegistrationMethod):
             Der['Dyt'] = Der['Dy'] * Der['It']
             B = -1 * np.asarray([np.sum(Der['Dxt'] * valid_mask), np.sum(Der['Dyt'] * valid_mask)])
 
-            # Calculate Shift
-            shift = 8 * np.linalg.lstsq(A, B, rcond=None)[
-                0]  # normalizing to account for the un normalized filter in grad
+            # Calculate Shift, normalizing to account for the un normalized filter in grad
+            shift = 8 * np.linalg.lstsq(A, B, rcond=None)[0]
 
             # possible improvements:
             # check if current step is the same size but oposite sign of prev, then cut step by 0.5
